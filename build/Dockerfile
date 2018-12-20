@@ -47,6 +47,9 @@ RUN (cd share/finnpos/omorfi/ && curl -LO https://github.com/mpsilfve/FinnPos/re
 RUN make && make ftb-omorfi-tagger 
 RUN sudo make install && sudo make install-models
 
+# Voikko development and dictionary, other HFST tools
+RUN sudo apt-get -y install hfst libhfst42-dev python3-libhfst python3-libvoikko voikko-fi libvoikko-dev foma-bin
+
 # Turku NLP using neural parser
 WORKDIR /nlp
 RUN git clone https://github.com/TurkuNLP/Turku-neural-parser-pipeline.git
