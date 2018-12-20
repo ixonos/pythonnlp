@@ -49,6 +49,7 @@ RUN sudo make install && sudo make install-models
 
 # Voikko development and dictionary, other HFST tools
 RUN sudo apt-get -y install hfst libhfst42-dev python3-libhfst python3-libvoikko voikko-fi libvoikko-dev foma-bin
+RUN sudo pip3 install hfst
 
 # Turku NLP using neural parser
 WORKDIR /nlp
